@@ -1,63 +1,18 @@
-/* Color Palette & Custom Theme Variables */
-:root {
-  --fridge-bg: #0c1017;
-  --fridge-panel: #151c28;
-  --fridge-card: #1b2434;
-  --fridge-border: #27354a;
-  --fridge-accent: #38bdf8;
-  --fridge-accent-glow: rgba(56, 189, 248, 0.15);
-}
-
-/* Custom Tailwind utility overrides */
-.bg-fridge-panel {
-  background-color: var(--fridge-panel);
-}
-
-.bg-fridge-card {
-  background-color: var(--fridge-card);
-}
-
-.border-fridge-border {
-  border-color: var(--fridge-border);
-}
-
-/* Base Body Styling */
-body {
-  background: radial-gradient(circle at 50% 0%, #172438 0%, #0a0d14 100%);
-  min-height: 100vh;
-  color: #e2e8f0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Glassmorphism styling */
-.touch-glass {
-  background: rgba(21, 28, 40, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 25px -4px rgba(56, 189, 248, 0.35);
-}
-
-/* Custom Scrollbars */
-.custom-scroll::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: #27354a;
-  border-radius: 4px;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
-}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f8; color: #222; }
+header { background: white; padding: 16px 24px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+header h1, header p { margin: 0; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.status, .columns { display: grid; gap: 16px; margin-bottom: 16px; }
+.status { grid-template-columns: repeat(3, 1fr); }
+.columns { grid-template-columns: 1fr 1fr; }
+.card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 16px; }
+h2 { margin-top: 0; font-size: 18px; }
+.value { margin-bottom: 0; font-size: 24px; font-weight: bold; }
+form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+input { min-width: 0; flex: 1; padding: 9px; border: 1px solid #ccc; border-radius: 5px; }
+button { padding: 9px 12px; border: 0; border-radius: 5px; background: #2563eb; color: white; cursor: pointer; }
+li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #eee; }
+li:last-child { border-bottom: 0; }
+.remove { background: #e5e7eb; color: #222; }
+@media (max-width: 650px) { .status, .columns { grid-template-columns: 1fr; } header { padding: 14px 16px; } }
